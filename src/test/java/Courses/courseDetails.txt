@@ -1,0 +1,25 @@
+{
+  "dashboard":
+  {
+    "purchaseAmount": 910,
+    "website":"http://www.google.com"
+  },
+  "Courses":
+  [
+      {
+        "title":"Selenium Python",
+        "price":200,
+        "copies": 2
+      },
+      {
+        "title":"Selenium JAVA",
+        "price":100,
+        "copies": 3
+      },
+      {
+        "title":"Selenium Python",
+        "price":105,
+        "copies": 2
+      }
+   ]
+}
