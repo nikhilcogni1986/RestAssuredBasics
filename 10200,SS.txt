@@ -1,0 +1,2 @@
+This is a sample attachment to the JIRA Issue
+using Rest Assured API
