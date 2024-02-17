@@ -36,14 +36,14 @@ public class OAuthTest
         System.out.println(js.getString("access_token"));
         String generatedAccessToken = js.getString("access_token");
         //Get course details
-        //https:rahulshettyacademy.com/oauthapi/getCourseDetails
+        //https://rahulshettyacademy.com/oauthapi/getCourseDetails
         //Get
         //Query Param: access_token:
 
         String courseResponse = given().
                 queryParam("access_token",generatedAccessToken)
                 .when().log().all()
-                .get("https:rahulshettyacademy.com/oauthapi/getCourseDetails")
+                .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails")
                 .asString();
         System.out.println(courseResponse);
     }
