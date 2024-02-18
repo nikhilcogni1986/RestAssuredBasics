@@ -1,8 +1,8 @@
-package OAuthAPI;
+package Deserialization;
 
+import Pojo.GetCourses;
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 
 public class OAuthTest
@@ -40,11 +40,34 @@ public class OAuthTest
         //Get
         //Query Param: access_token:
 
-        String courseResponse = given().
+        GetCourses courses = given().
                 queryParam("access_token",generatedAccessToken)
                 .when().log().all()
                 .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails")
-                .asString();
-        System.out.println(courseResponse);
+                .as(GetCourses.class);
+
+        //URL for the course
+        System.out.println("URL for the course: "+courses.getUrl());
+
+        //get the course title of first web automation
+        String webAutomationTitle = courses.getCourses().getWebAutomation().get(0).getCourseTitle();
+        System.out.println(webAutomationTitle);
+
+        //print the titles of API Automation
+        int NoOfAPICourses = courses.getCourses().getApi().size();
+
+        for(int i=0 ; i<NoOfAPICourses ; i++)
+        {
+            System.out.println(courses.getCourses().getApi().get(i).getCourseTitle());
+        }
+
+        for(int i=0 ; i<NoOfAPICourses ; i++)
+        {
+            System.out.println(courses.getCourses().getApi().get(i).getCourseTitle());
+            String courseTitle = courses.getCourses().getApi().get(i).getCourseTitle();
+            if(courseTitle.equalsIgnoreCase("Rest Assured Automation using Java"))
+                System.out.println("Price details for Rest Assured course: "
+                        +courses.getCourses().getApi().get(i).getPrice());
+        }
     }
 }

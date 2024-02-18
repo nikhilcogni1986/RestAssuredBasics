@@ -25,6 +25,7 @@ public class AddPlace {
                 .header("Content-Type", equalTo("application/json;charset=UTF-8"))
                 .extract()
                 .response().asString();
+        System.out.println(response);
 
         JsonPath js = new JsonPath(response);
         String placeID =js.get("place_id");
