@@ -1,16 +1,12 @@
 package Serialization;
 
-import GoogleAPI.Payload.PayloadData;
-import Pojo.GetCourses;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class AddPlaceTest
 {
