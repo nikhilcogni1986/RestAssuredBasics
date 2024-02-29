@@ -20,8 +20,8 @@ public class LoginTest
         given()
                 .header("Content-Type","application/json")
                 .body("{\n" +
-                        "    \"username\": \"nikhilcogni\",\n" +
-                        "    \"password\": \"Password1234\"\n" +
+                        "    \"username\": \"XXXXX\",\n" +
+                        "    \"password\": \"XXXXXX\"\n" +
                         "}")
                 .when()
                 .filter(loginSession)

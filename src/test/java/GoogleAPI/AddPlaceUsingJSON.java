@@ -68,7 +68,8 @@ public class AddPlaceUsingJSON {
     public static String getJSONToString()
     {
         try {
-            return new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+"\\src\\test\\java\\GoogleAPI\\PlaceDetails.json")));
+            return new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+
+                    "\\src\\test\\java\\GoogleAPI\\PlaceDetails.json")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
